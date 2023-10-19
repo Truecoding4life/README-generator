@@ -1,10 +1,41 @@
-index,js
+
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
+
 const generateMarkdown = require("./utils/generateMarkdown")
 // TODO: Create an array of questions for user input
-const questions = [];
+const questions = [[]];
+
+inquirer
+  .prompt([
+    {name: 'title',
+      type: 'input',
+      message: 'Enter Project Title to Continue',
+      
+    },
+    {
+        name: 'description',
+      type: 'input',
+      message: 'Enter your description to continue',
+      
+    },
+    {
+        name: 'add more',
+        type: 'list',
+        message: 'Select next section to add to your README:',
+        
+        choices: [ "Features", "Usage", "User interface", ]
+      },
+  ])
+//   .then((response) => {
+//     console.log(response)
+//     response.confirm === response.password
+//       ? console.log('Success!')
+//       : console.log('You forgot your password already?!')
+//   }
+  ;
+
 //* add type, name, and message for each question
 //* add questions:  added readme sections (description, usage, license, etc)
 // TODO: Create a function to write README file
