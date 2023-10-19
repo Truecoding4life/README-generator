@@ -5,9 +5,7 @@ const fs = require("fs");
 
 const generateMarkdown = require("./utils/generateMarkdown")
 // TODO: Create an array of questions for user input
-const questions = [[]];
-
-inquirer
+const questions = inquirer
   .prompt([
     {name: 'title',
       type: 'input',
@@ -21,13 +19,27 @@ inquirer
       
     },
     {
-        name: 'add more',
+        name: 'choices',
         type: 'list',
         message: 'Select next section to add to your README:',
-        
-        choices: [ "Features", "Usage", "User interface", ]
+        choices: [ "Features", "Usage", "User Interface", ]
       },
   ])
+
+
+.then((response) => {
+    const choice = response.choices;
+            if(choice == "Feature"){
+                                console.log("User Selected Features")
+            }
+            if(choice== "Usage"){
+                                    console.log("User Selected Usage")
+            }
+
+            if(choice== "User Interface") {
+                    console.log("User Selected Interface")
+            }
+    });
 //   .then((response) => {
 //     console.log(response)
 //     response.confirm === response.password
