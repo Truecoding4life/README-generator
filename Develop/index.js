@@ -4,7 +4,7 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 
 const generateMarkdown = require("./utils/generateMarkdown")
-// TODO: Create an array of questions for user input
+
 const questions = [{
   name: 'title',
   type: 'input',
@@ -28,7 +28,7 @@ const questions = [{
 
 },
 {
-  name: 'contri',
+  name: 'contribution',
   type: 'input',
   message: 'Enter your contributor to continue',
 
@@ -46,16 +46,13 @@ inquirer
   ])
   .then((response) => {
     console.log(response)
-    // writeToFile("README.md", generateMarkdown(response))
+    writeToFile("README.md", generateMarkdown(response))
     if (response.test=='') {
       delete questions.test
       console.log("User skipped test")
     }
 
   })
-  // .prompt([
-  //   questions[2],questions[3]
-  // ]);
 
 ;
 
