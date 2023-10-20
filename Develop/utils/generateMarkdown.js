@@ -19,17 +19,22 @@ function renderLicenseSection(license) {
 function generateMarkdown(data) {
   //* create layout of what you markdown readme with template literals
   //* hint - call renderlicense functions inside this function
-  return `## ${data.title}'
-  '##Description
-  ${data.description}'
- ' ##Usage
-  ${data.usage}'
-  '##Installation
-  ${data.installation}'
-  '#'#Contribution
-  ${data.contribution}'
-  '##Test
-  ${data.test}'
-`;
+  const everything =
+  `
+  # ${data.title}
+  ## Description 
+  ${data.description}
+  ## Usage
+  ${data.usage}
+  ## Installation
+  ${data.installation}
+  ## Contribution 
+  ${data.contribution}
+  ## Testing
+  ${data.test}
+  
+  
+`
+  return everything;
 }
 module.exports = generateMarkdown;
