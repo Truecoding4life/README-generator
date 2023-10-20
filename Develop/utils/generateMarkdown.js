@@ -19,22 +19,35 @@ function renderLicenseSection(license) {
 function generateMarkdown(data) {
   //* create layout of what you markdown readme with template literals
   //* hint - call renderlicense functions inside this function
-  const everything =
+  let everything =
+
   `
   # ${data.title}
   ## Description 
   ${data.description}
-  ## Usage
-  ${data.usage}
-  ## Installation
-  ${data.installation}
-  ## Contribution 
-  ${data.contribution}
-  ## Testing
-  ${data.test}
-  
-  
 `
+if (data.Usage!==true){
+  console.log("User wrote Usage")
+  everything = everything +   `## Usage
+  ${data.usage}`
+}
+if (data.installation!==true){
+  console.log("User wrote Installation")
+  everything = everything +   `## Installation
+  ${data.installation}`
+}
+if (data.contribution!==true){
+  console.log("User wrote contribution")
+  everything = everything +   `## Contribution 
+  ${data.contribution}`
+}
+
+
+if (data.test!==true){
+  console.log("User wrote test")
+  everything = everything +   `## Testing
+  ${data.test}`
+}
   return everything;
 }
 module.exports = generateMarkdown;

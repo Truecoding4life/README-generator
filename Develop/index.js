@@ -8,41 +8,41 @@ const generateMarkdown = require("./utils/generateMarkdown")
 const questions = [{
   name: 'title',
   type: 'input',
-  message: 'Enter Project Title to Continue .....',
+  message: 'REQUIRE | Enter Project Title to Continue | .....',
 
 },
 {
   name: 'description',
   type: 'input',
-  message: 'Enter your DESCRIPTION to continue .....',
+  message: 'REQUIRE | Enter your DESCRIPTION to continue | .....',
 
 }, {
   name: 'installation',
   type: 'input',
-  message: 'Enter your INSTALLATION instruction to continue .....',
+  message: 'OPTIONAL | Enter your INSTALLATION instruction to continue | Enter to skip',
 },
 {
   name: 'usage',
   type: 'input',
-  message: 'Enter your USAGE INFORMATION to continue .....',
+  message: 'OPTIONAL | Enter your USAGE INFORMATION to continue | Enter to skip',
 
 },
 {
   name: 'contribution',
   type: 'input',
-  message: 'Enter your CONTRIBUTOR to continue .....',
+  message: 'OPTIONAL | Enter your CONTRIBUTOR to continue | Enter to skip',
 
 },
 {
   name: 'test',
   type: 'input',
-  message: 'Enter your TESTING DATA to continue .....',
+  message: 'OPTIONAL | Enter your TESTING DATA to continue | Enter to skip',
 },
 ]
 
 inquirer
   .prompt([
-    questions[0],questions[1],
+    questions[0],questions[1],questions[2],questions[3],questions[4],questions[5]
     
   ])
   .then((response) => {

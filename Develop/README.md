@@ -1,14 +1,9 @@
 
-  # Minh Info 
+  # Hello World
   ## Description 
-  Address and phone number 
-  ## Usage
-  undefined
+  New Application
+## Usage
   ## Installation
-  undefined
   ## Contribution 
-  undefined
   ## Testing
-  undefined
-  
   
