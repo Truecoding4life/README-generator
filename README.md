@@ -1,7 +1,8 @@
 # README Generator
 
 ## Deployed Link
-[Link to Repo](https://github.com/Truecoding4life/README-generator)
+* [Github Repository](https://github.com/Truecoding4life/README-generator)
+* [Demonstration Video](https://watch.screencastify.com/v/hFZEmUf0ZLYK4YqntuME)
 
 ## Description
 This README generator can generate your readme for you and make your life so much easier. This Readme will take in your Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions,

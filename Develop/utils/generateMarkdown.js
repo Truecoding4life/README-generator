@@ -30,6 +30,7 @@ function generateMarkdown(data) {
 
 
   let everything =
+  
 
   `
   # ${data.title}
@@ -37,16 +38,21 @@ function generateMarkdown(data) {
   ## Description 
 
   ${data.description}
-  
+
   ## Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
   * [Contribution](#contribution)
-  * [License](#license)
   * [Test](#testing)
 
 
 `
+
+
+if (data.license!=='None' || data.license.choice!==''){
+  console.log("User chose license")  
+  everything=everything +renderLicenseBadge(data)
+}
 
 if (data.installation!==''){
   console.log("User wrote Installation")
@@ -96,10 +102,11 @@ if (data.test!==''){
   
   `
 }
-if (data.license!=='None' || data.license.choice!==''){
-console.log("User chose license")  
-everything=everything +renderLicenseBadge(data)
-}
-return everything;
+
+return everything + `
+
+## This README was generated based on the Good README Guide
+
+`;
 };
 module.exports = generateMarkdown;
