@@ -1,53 +1,93 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-//*must have a couple license options
-function renderLicenseBadge(license) {}
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {
-//* return a string that has the link to selected license
-}
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {
-  //* create a conditional to check if license exists
-  //* call renderlicenseBadge and renderlicenseLink
-  //* use template literal to format license section and call functions
-  //* return template literal
-}
-// TODO: Create a function to generate markdown for README
+
+const BSD = '[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)'
+const Apache = '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)'
+const CC0 = '[![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)](http://creativecommons.org/publicdomain/zero/1.0/)'
+
+function renderLicenseBadge(data) {
+    if(data.license == 'BSD'){
+     return BSD;
+    }
+    if(data.license == 'Apache'){
+      return Apache;
+    }
+    if(data.license == 'CC0'){
+       return CC0;
+    }
+  }
+
+// function renderLicenseLink(data,everything) {
+//   console.log(data,everything);
+//   everything = everything + data;
+
+  
+// }
+
+// function renderLicenseSection(data) {
+ 
+// }
+
 function generateMarkdown(data) {
-  //* create layout of what you markdown readme with template literals
-  //* hint - call renderlicense functions inside this function
+
+
   let everything =
 
   `
   # ${data.title}
   ## Description 
   ${data.description}
+  ## Table of Contents
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Contribution](#contribution)
+  * [License](#license)
+  * [Test](#testing)
+
+----------------
 `
-if (data.Usage!==true){
-  console.log("User wrote Usage")
-  everything = everything +   `## Usage
-  ${data.usage}`
-}
-if (data.installation!==true){
+
+if (data.installation!==''){
   console.log("User wrote Installation")
-  everything = everything +   `## Installation
-  ${data.installation}`
-}
-if (data.contribution!==true){
+  everything = everything +   `
+  ## Installation
+  ${data.installation}
+  
+  
+  `
+};
+if (data.usage!==''){
+  console.log("User wrote Usage")
+  everything = everything +   `
+  ## Usage
+  ${data.usage}
+  
+  
+  `
+};
+
+if (data.contribution!==''){
   console.log("User wrote contribution")
-  everything = everything +   `## Contribution 
-  ${data.contribution}`
-}
+  everything = everything +   `
+  ## Contribution 
+  ${data.contribution}
+  
+  
+  `
+};
 
 
-if (data.test!==true){
+if (data.test!==''){
   console.log("User wrote test")
-  everything = everything +   `## Testing
-  ${data.test}`
+  everything = everything +   `
+  ## Testing
+  ${data.test}
+  
+  
+  `
 }
-  return everything;
+if (data.license!=='None' || data.license.choice!==''){
+console.log("User chose license")  
+everything=everything +renderLicenseBadge(data)
 }
+return everything;
+};
 module.exports = generateMarkdown;

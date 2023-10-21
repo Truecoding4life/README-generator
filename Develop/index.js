@@ -9,13 +9,14 @@ const questions = [{
   name: 'title',
   type: 'input',
   message: 'REQUIRE | Enter Project Title to Continue | .....',
+  validate: (data)=>{if(data){return true}else{return "Please enter a title"}}
 
 },
 {
   name: 'description',
   type: 'input',
   message: 'REQUIRE | Enter your DESCRIPTION to continue | .....',
-
+  validate: (data)=>{if(data){return true}else{return "Please enter a description"}}
 }, {
   name: 'installation',
   type: 'input',
@@ -37,12 +38,18 @@ const questions = [{
   name: 'test',
   type: 'input',
   message: 'OPTIONAL | Enter your TESTING DATA to continue | Enter to skip',
+},{
+  name: 'license',
+  type: 'list',
+  message: 'REQUIRE | Choose LICENSES to continue | Enter to skip',
+  choices: ['BSD', 'Apache', 'CC0', 'None'],
 },
+
 ]
 
 inquirer
   .prompt([
-    questions[0],questions[1],questions[2],questions[3],questions[4],questions[5]
+    questions[0],questions[1],questions[2],questions[3],questions[4],questions[5],questions[6]
     
   ])
   .then((response) => {
