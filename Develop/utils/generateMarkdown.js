@@ -33,8 +33,11 @@ function generateMarkdown(data) {
 
   `
   # ${data.title}
+
   ## Description 
+
   ${data.description}
+  
   ## Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
@@ -42,7 +45,7 @@ function generateMarkdown(data) {
   * [License](#license)
   * [Test](#testing)
 
-----------------
+
 `
 
 if (data.installation!==''){
@@ -59,6 +62,15 @@ if (data.usage!==''){
   everything = everything +   `
   ## Usage
   ${data.usage}
+  
+  
+  `
+};
+if (data.question!==''){
+  console.log("User wrote question")
+  everything = everything +   `
+  ## question 
+  ${data.question}
   
   
   `

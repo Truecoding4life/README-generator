@@ -22,7 +22,6 @@ If you need an example of a good README, check out [the VSCode repository](https
 * [Installation](#installation)
 * [Usage](#usage)
 * [Credits](#credits)
-* [License](#license)
 * [Test](#testing)
 
 ----------------

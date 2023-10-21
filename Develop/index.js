@@ -23,6 +23,11 @@ const questions = [{
   message: 'OPTIONAL | Enter your INSTALLATION instruction to continue | Enter to skip',
 },
 {
+  name: 'question',
+  type: 'input',
+  message: 'OPTIONAL | Enter your QUESTION to continue | Enter to skip',
+},
+{
   name: 'usage',
   type: 'input',
   message: 'OPTIONAL | Enter your USAGE INFORMATION to continue | Enter to skip',
@@ -49,7 +54,7 @@ const questions = [{
 
 inquirer
   .prompt([
-    questions[0],questions[1],questions[2],questions[3],questions[4],questions[5],questions[6]
+    questions[0],questions[1],questions[2],questions[3],questions[4],questions[5],questions[6],questions[7]
     
   ])
   .then((response) => {
