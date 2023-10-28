@@ -59,7 +59,7 @@ inquirer
   ])
   .then((response) => {
     console.log(response)
-    writeToFile("README.md", generateMarkdown(response))
+    writeToFile("GENERATED README.md", generateMarkdown(response))
     if (response.test=='') {
       delete questions.test
       console.log("User skipped test")
